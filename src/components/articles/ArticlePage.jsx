@@ -11,7 +11,7 @@ const ArticlePage = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        setIsLoading(true);
+        // setIsLoading(true);
         const articleData = await getArticleById(article_id);
         setArticle(articleData.articles[0]);
       } catch(err) {
