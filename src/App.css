@@ -123,3 +123,22 @@
   right: 5%;
   
 }
+
+#comments{
+  border-top: 2px solid var(--highlight);
+  margin-top: 1rem;
+  
+}
+
+#comments-inner{
+  border: 1px solid grey;
+  max-width: 90%;
+  list-style: none;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.comments-heading{
+  text-align: center;
+}
