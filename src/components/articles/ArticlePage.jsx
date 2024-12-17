@@ -2,34 +2,36 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { getArticleById } from '../../api/api'
+import Comments from '../comments/comments'
+
 
 const ArticlePage = () => {
   const { article_id } = useParams();
   const [ article, setArticle] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
+
 
   useEffect(() => {
-    const fetchArticle = async () => {
-      try {
-        // setIsLoading(true);
-        const articleData = await getArticleById(article_id);
+    getArticleById(article_id)
+      .then(articleData => {
         setArticle(articleData.articles[0]);
-      } catch(err) {
-        console.error('Error fetching article', err)
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchArticle();
+      }).catch(error => {
+        setError(error);
+      }).finally(() => {
+        setIsLoading(false)
+      })
   }, [article_id])
+
+
+  if(error) {
+    return <div>Error: {error.message}</div>
+  }
 
   if(isLoading){
     return <div>Article is loading...</div>
   }
 
-  if(!article){
-    return <div>Error fetching article!</div>
-  }
 
 
   return (
@@ -40,8 +42,11 @@ const ArticlePage = () => {
         <p className='paragraph'>{article.body}</p>
         <span className='comments'>Comments on this article: {article.comment_count}</span>
       </div>
+
+      <div id='comments'>
+        <Comments />
+      </div>
       </section>
-   
   )
 }
 

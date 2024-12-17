@@ -14,4 +14,9 @@ const getArticleById = async (article_id) => {
     return data;
 }
 
-export { getArticles, getArticleById }
+const getCommentsByArticleId = async (article_id) => {
+    const { data } = await api.get(`/articles/${article_id}/comments`);
+    return data.comments;
+}
+
+export { getArticles, getArticleById, getCommentsByArticleId }
