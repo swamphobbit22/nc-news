@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ThumbsUp, ThumbsDown} from 'lucide-react'
+import { ThumbsUp, ThumbsDown, Plus} from 'lucide-react'
 import  {updateCommentVotes}  from '../../api/api';
 
 const CommentCard = ({ comment }) => {
@@ -60,27 +60,30 @@ const CommentCard = ({ comment }) => {
   }
 
   return (
-    <div id='comments-inner'>
-      <li>
-        <p>Date: {formatDate(comment.created_at)}</p>
-        <p>User: {comment.author}</p>
-        <p>{comment.body}</p>
-        <p>Total votes: {votes}</p>
+    <section>
 
-      </li>
-      <button 
-          className="icon-thumbs-down" 
-          onClick={() => handleVote(-1)} 
-          disabled={hasDownVoted}>
-            <ThumbsDown />
-      </button>
-      <button 
-          className="icon-thumbs-up" 
-          onClick={() => handleVote(1)} 
-          disabled={hasUpVoted}>
-            <ThumbsUp />
-      </button>
-    </div>
+        <div id='comments-inner'>
+          <li>
+            <p>Date: {formatDate(comment.created_at)}</p>
+            <p>User: {comment.author}</p>
+            <p>{comment.body}</p>
+            <p>Total votes: {votes}</p>
+
+          </li>
+          <button 
+              className="icon-thumbs-down" 
+              onClick={() => handleVote(-1)} 
+              disabled={hasDownVoted}>
+                <ThumbsDown />
+          </button>
+          <button 
+              className="icon-thumbs-up" 
+              onClick={() => handleVote(1)} 
+              disabled={hasUpVoted}>
+                <ThumbsUp />
+          </button>
+        </div>
+    </section>
   )
 }
 

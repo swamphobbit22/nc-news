@@ -24,4 +24,9 @@ const updateCommentVotes = async (comment_id) => {
     return data;
 }
 
-export { getArticles, getArticleById, getCommentsByArticleId, updateCommentVotes }
+const addComment = async (article_id, commentData) => {
+        const { data } = await api.post(`/articles/${article_id}/comments`, commentData);
+        return data;
+}
+
+export { getArticles, getArticleById, getCommentsByArticleId, updateCommentVotes, addComment }
