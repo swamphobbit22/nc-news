@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { getArticleById } from '../../api/api'
 import Comments from '../comments/comments'
+import AddComment from '../comments/AddComment';
 
 
 const ArticlePage = () => {
@@ -43,7 +44,8 @@ const ArticlePage = () => {
         <span className='comments'>Comments on this article: {article.comment_count}</span>
       </div>
 
-      <div id='comments'>
+      <div id='comments'> 
+        <AddComment article_id={article_id}/>
         <Comments />
       </div>
       </section>
