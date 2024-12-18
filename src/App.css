@@ -121,16 +121,15 @@
   text-align: right;
   bottom: 1%;
   right: 5%;
-  
 }
 
 #comments{
   border-top: 2px solid var(--highlight);
   margin-top: 1rem;
-  
 }
 
 #comments-inner{
+  position: relative;
   border: 1px solid grey;
   max-width: 90%;
   list-style: none;
@@ -141,4 +140,55 @@
 
 .comments-heading{
   text-align: center;
+}
+
+.total-votes{
+  text-align: left;
+  bottom: 1%;
+  left: 5%;
+  color: red;
+}
+
+.icon-thumbs-up{
+  position:absolute;
+  bottom: 0px;
+  right: 3%;
+  padding: 0;
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: rgb(5, 163, 5);
+}
+
+.icon-thumbs-up:hover{
+  color: lime;
+  transform: scale(1.1);
+}
+
+.icon-thumbs-up:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon-thumbs-down{
+  position:absolute;
+  bottom: -4px;
+  right: 0;
+  padding: 0;
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: red;
+}
+
+.icon-thumbs-down:hover{
+  color: orange;  
+  transform: scale(1.1);
+}
+
+.icon-thumbs-down:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
 }
