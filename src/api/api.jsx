@@ -4,8 +4,11 @@ const api = axios.create({
     baseURL: 'https://my-nc-news-web-service.onrender.com/api'
 })
 
-const getArticles = async () => {
-    const { data } = await api.get('/articles');
+const getArticles = async (topicQuery) => {
+    const url = topicQuery ? `/articles?topic=${topicQuery}` : '/articles';
+    const { data } = await api.get(url)
+    console.log(data, '<<<data from api')
+    // const { data } = await api.get('/articles');
     return data.articles;
 }
 
@@ -29,4 +32,11 @@ const addComment = async (article_id, commentData) => {
         return data;
 }
 
-export { getArticles, getArticleById, getCommentsByArticleId, updateCommentVotes, addComment }
+const getTopics = async () => {
+    const { data } = await api.get('/topics');
+    return data.topics;
+}
+
+
+
+export { getArticles, getArticleById, getCommentsByArticleId, updateCommentVotes, addComment, getTopics }
