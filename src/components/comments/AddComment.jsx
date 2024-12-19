@@ -3,7 +3,7 @@ import { addComment } from '../../api/api'
 
 const AddComment = ({ article_id }) => {
     const [error, setError] = useState(null)
-    const [formData, setFormData] = useState({author: 'cooljmessy'})
+    const [formData, setFormData] = useState({author: 'happyamy2016'})
 
   // Handle form input changes
   const handleChange = (e) => {
@@ -27,7 +27,6 @@ const AddComment = ({ article_id }) => {
         body: formData.body
       };
 
-        console.log(payload)
     try {
         const response = await addComment(Number(article_id), payload);
         alert("Comment added successfully!");

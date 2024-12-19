@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getArticles } from '../../api/api'
 import ArticleCard from './ArticleCard';
 import {useSearchParams} from 'react-router-dom'
+import Loading from "../../utils/Loading";
+import SearchBar from "../search/SearchBar";
 
 
 const Articles = () => {
@@ -23,11 +25,13 @@ const Articles = () => {
     })
   }, [topicQuery])
 
-  if (isLoading) return <p>Loading articles...</p>;
+  if (isLoading) return <Loading />;
 
   return (
-    <div >
+    <section >
+      <div><SearchBar /></div>
       <ul className='container'>
+      
           {articles.map((article) => {
             return (
               <ArticleCard article={article} key={article.article_id} />
@@ -35,7 +39,7 @@ const Articles = () => {
           })}
       </ul>
       
-    </div>
+    </section>
   )
 }
 

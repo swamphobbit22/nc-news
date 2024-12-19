@@ -7,8 +7,6 @@ const api = axios.create({
 const getArticles = async (topicQuery) => {
     const url = topicQuery ? `/articles?topic=${topicQuery}` : '/articles';
     const { data } = await api.get(url)
-    console.log(data, '<<<data from api')
-    // const { data } = await api.get('/articles');
     return data.articles;
 }
 
@@ -37,6 +35,29 @@ const getTopics = async () => {
     return data.topics;
 }
 
+const getCommentsByUser = async (username) => {
+    const { data } = await api.get(`/comments/${username}`);
+    return data.comments;
+}
 
+const deleteComment = async (comment_id) => {
+    const { data } = await api.delete(`/comments/${comment_id}`)
+    return data.comments;
+}
 
-export { getArticles, getArticleById, getCommentsByArticleId, updateCommentVotes, addComment, getTopics }
+const getUserById = async (username) => {
+    const { data } = await api.get(`/users/${username}`);
+    return data.users;
+}
+
+export { 
+    getArticles, 
+    getArticleById, 
+    getCommentsByArticleId, 
+    updateCommentVotes, 
+    addComment, 
+    getTopics, 
+    deleteComment, 
+    getCommentsByUser,
+    getUserById
+}
