@@ -19,6 +19,7 @@ function App() {
             <Route path="/articles" element={<Articles />} />
             <Route path="/articles/:article_id" element={<ArticlePage />} />
             <Route path="/topics" element={<Topics />}/>
+            {/* <Route path="/comments" element={<Comments />}></Route> */}
             <Route path='*' element={<Error error={{ status: 404, statusText: 'Page not found'}} />} />
           </Routes>
         <Footer />

@@ -27,7 +27,6 @@ const AddComment = ({ article_id }) => {
         body: formData.body
       };
 
-        console.log(payload)
     try {
         const response = await addComment(Number(article_id), payload);
         alert("Comment added successfully!");

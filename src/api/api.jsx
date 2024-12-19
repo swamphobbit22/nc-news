@@ -35,6 +35,11 @@ const getTopics = async () => {
     return data.topics;
 }
 
+// const getCommentsByUserID = async (user_id) => {
+//     const { data } = await api.get(`/comments/${user_id}`);
+//     return data.comments;
+// }
+
 const deleteComment = async (comment_id) => {
     const { data } = await api.delete(`/comments/${comment_id}`)
     return data.comments;

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ThumbsUp, ThumbsDown, Plus} from 'lucide-react'
 import  {updateCommentVotes}  from '../../api/api';
 
-const CommentCard = ({ comment }) => {
+const CommentCard = ({ comment, currentUser, onDelete }) => {
   const [error, setError] = useState(null)
   const [votes, setVotes] = useState(comment.votes);
   const [hasUpVoted, setHasUpVoted] = useState(false)
@@ -82,6 +82,11 @@ const CommentCard = ({ comment }) => {
               disabled={hasUpVoted}>
                 <ThumbsUp />
           </button>
+          {/* only display delete if logged in user is author */}
+          {comment.author === currentUser && (
+            <button onClick={() => onDelete(comment.comment_id)}>Delete</button>
+          )}
+          
         </div>
     </section>
   )
