@@ -6,6 +6,7 @@ import Main from './components/main/Main'
 import Articles from './components/articles/Articles'
 import ArticlePage from './components/articles/ArticlePage'
 import Topics from "./components/topics/Topics";
+import UserComments from './components/comments/UserComments';
 import './App.css'
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
             <Route path="/articles" element={<Articles />} />
             <Route path="/articles/:article_id" element={<ArticlePage />} />
             <Route path="/topics" element={<Topics />}/>
-            {/* <Route path="/comments" element={<Comments />}></Route> */}
+            <Route path="/user-comments" element={<UserComments />}></Route>
             <Route path='*' element={<Error error={{ status: 404, statusText: 'Page not found'}} />} />
           </Routes>
         <Footer />

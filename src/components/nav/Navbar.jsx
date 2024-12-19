@@ -7,7 +7,7 @@ const Navbar = () => {
       <NavLink to="/" className={({ isActive}) => isActive ? 'active-link' : undefined}>Main</NavLink>
       <NavLink to="/topics" className={({ isActive}) => isActive ? 'active-link' : undefined}>Topics</NavLink>
       <NavLink to="/articles" className={({ isActive}) => isActive ? 'active-link' : undefined}>Articles</NavLink>
-      {/* <NavLink to="/comments" className={({ isActive}) => isActive ? 'active-link' : undefined}>User Comments</NavLink> */}
+      <NavLink to="/user-comments" className={({ isActive}) => isActive ? 'active-link' : undefined}>User Comments</NavLink>
       <NavLink to="/login" className={({ isActive}) => `${isActive ? 'active-link' : undefined} login-icon`}><LogIn /></NavLink>
     </nav>
   )

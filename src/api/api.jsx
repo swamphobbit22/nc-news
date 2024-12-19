@@ -35,15 +35,29 @@ const getTopics = async () => {
     return data.topics;
 }
 
-// const getCommentsByUserID = async (user_id) => {
-//     const { data } = await api.get(`/comments/${user_id}`);
-//     return data.comments;
-// }
+const getCommentsByUser = async (username) => {
+    const { data } = await api.get(`/comments/${username}`);
+    return data.comments;
+}
 
 const deleteComment = async (comment_id) => {
     const { data } = await api.delete(`/comments/${comment_id}`)
     return data.comments;
 }
 
+const getUserById = async (username) => {
+    const { data } = await api.get(`/users/${username}`);
+    return data.users;
+}
 
-export { getArticles, getArticleById, getCommentsByArticleId, updateCommentVotes, addComment, getTopics, deleteComment }
+export { 
+    getArticles, 
+    getArticleById, 
+    getCommentsByArticleId, 
+    updateCommentVotes, 
+    addComment, 
+    getTopics, 
+    deleteComment, 
+    getCommentsByUser,
+    getUserById
+}
