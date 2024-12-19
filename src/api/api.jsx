@@ -7,8 +7,6 @@ const api = axios.create({
 const getArticles = async (topicQuery) => {
     const url = topicQuery ? `/articles?topic=${topicQuery}` : '/articles';
     const { data } = await api.get(url)
-    console.log(data, '<<<data from api')
-    // const { data } = await api.get('/articles');
     return data.articles;
 }
 
@@ -37,6 +35,10 @@ const getTopics = async () => {
     return data.topics;
 }
 
+const deleteComment = async (comment_id) => {
+    const { data } = await api.delete(`/comments/${comment_id}`)
+    return data.comments;
+}
 
 
-export { getArticles, getArticleById, getCommentsByArticleId, updateCommentVotes, addComment, getTopics }
+export { getArticles, getArticleById, getCommentsByArticleId, updateCommentVotes, addComment, getTopics, deleteComment }
