@@ -37,18 +37,19 @@ const ArticlePage = () => {
 
   return (
     <section id='article-container'> 
-      <div id='article-inner'>
+      <article id='article-inner'>
         <img src={article.article_img_url} alt={article.title} />
         <h2 className='title'>{article.title}</h2>
         <p className='paragraph'>{article.body}</p>
         <span className='comments'>Comments on this article: {article.comment_count}</span>
-      </div>
+      </article>
 
       <div id='comments'> 
-        <AddComment article_id={article_id}/>
         <Comments />
+        <h3>Add your comment here</h3>
+        <AddComment article_id={article_id}/>
       </div>
-      </section>
+    </section>
   )
 }
 

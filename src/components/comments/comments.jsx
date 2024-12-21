@@ -34,9 +34,8 @@ const Comments = () => {
     
 
   return (
-    <div>
-        <h3 className='comments-heading'>Comments</h3>
-        <ul>
+    <div className='commentcard-container'>
+        <ul className="card-list">
             {comments.map((comment) => {
                 return(
                     <CommentCard comment={comment} key={comment.comment_id}/>

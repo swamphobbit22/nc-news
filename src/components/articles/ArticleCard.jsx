@@ -4,16 +4,23 @@ import {Link} from 'react-router-dom'
 const ArticleCard = ({ article }) => {
   return (
     <Link to={`/articles/${article.article_id}`} className='card-link'>
-      <div className='article-cards-container'>
-        <div className='card'>
+      <div className='article-cards'>
+        <div className='card-interior'>
           <li>
-            <span><strong>{article.title}</strong></span>
-            
-            <p className='align'>Author: {article.author}</p>
-            
-            <img src={article.article_img_url} alt={article.title}/> 
-            <p className='align position-bottom'><i>Topic: {article.topic}</i></p>
-            <p>{article.body}</p>
+            <header>
+              <h3>
+                {article.title}
+              </h3>
+            </header>
+            <p className='author'>Author: {article.author}</p>
+            <figure>
+              <img src={article.article_img_url} alt={article.title}/> 
+              <figcaption>Topic: {article.topic}</figcaption>
+            </figure>
+            <footer>
+              <p><i> Votes: {article.votes}</i></p>
+              <p><i>Comments: {article.comment_count}</i></p>
+            </footer>
           </li>
         </div>
       </div>

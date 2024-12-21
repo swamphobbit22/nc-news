@@ -37,18 +37,17 @@ const AddComment = ({ article_id }) => {
   }
 
   return (
-    <div>
-      <div >
-        <h4>Add a comment</h4>
-        <form onSubmit={handleSubmit}>
+
+      <div className='add-comment-container'>
+        {/* <h4>Add a comment</h4> */}
+        <form onSubmit={handleSubmit} className='add-comment'>
             <div>
                 <textarea 
-                className='add-comment'
                 name='body'
                 value={formData.body}
                 onChange={handleChange}
                 placeholder='Write your comment here'
-                rows='4'  />
+                rows='10'  />
             </div>
                 <button 
                 type='submit' 
@@ -59,7 +58,7 @@ const AddComment = ({ article_id }) => {
             {error && <p style={{ color: "red" }}>{error}</p>}
         </form>
       </div>
-    </div>
+
   )
 }
 

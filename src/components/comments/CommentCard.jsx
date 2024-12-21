@@ -60,28 +60,30 @@ const CommentCard = ({ comment, currentUser, onDelete }) => {
   }
 
   return (
-    <section>
-
-        <div id='comments-inner'>
+    <section  className='comment-cards'>
+        <div>
           <li>
             <p>Date: {formatDate(comment.created_at)}</p>
             <p>User: {comment.author}</p>
             <p>{comment.body}</p>
             <p>Total votes: {votes}</p>
-
           </li>
+          <div className="thumbs-container">
           <button 
               className="icon-thumbs-down" 
+              aria-label="Dislike"
               onClick={() => handleVote(-1)} 
               disabled={hasDownVoted}>
                 <ThumbsDown />
           </button>
           <button 
-              className="icon-thumbs-up" 
+              className="icon-thumbs-up"
+              aria-label="Like" 
               onClick={() => handleVote(1)} 
               disabled={hasUpVoted}>
                 <ThumbsUp />
           </button>
+          </div>
           {/* only display delete if logged in user is author */}
           {comment.author === currentUser && (
             <button onClick={() => onDelete(comment.comment_id)}>Delete</button>
@@ -92,4 +94,4 @@ const CommentCard = ({ comment, currentUser, onDelete }) => {
   )
 }
 
-export default CommentCard
+export default CommentCard;
