@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { getArticleById } from '../../api/api'
 import Comments from '../comments/comments'
 import AddComment from '../comments/AddComment';
+import { formatDate } from '../../utils/formatDate';
 
 
 const ArticlePage = () => {
@@ -40,6 +41,8 @@ const ArticlePage = () => {
       <article id='article-inner'>
         <img src={article.article_img_url} alt={article.title} />
         <h2 className='title'>{article.title}</h2>
+        <span>By: {article.author}</span>
+        <p>Date: {formatDate(article.created_at)}</p>
         <p className='paragraph'>{article.body}</p>
         <span className='comments'>Comments on this article: {article.comment_count}</span>
       </article>

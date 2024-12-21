@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { formatDate } from '../../utils/formatDate';
 
 const ArticleCard = ({ article }) => {
   return (
@@ -20,6 +21,7 @@ const ArticleCard = ({ article }) => {
             <footer>
               <p><i> Votes: {article.votes}</i></p>
               <p><i>Comments: {article.comment_count}</i></p>
+              <p>Date: {formatDate(article.created_at)}</p>
             </footer>
           </li>
         </div>

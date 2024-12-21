@@ -4,7 +4,7 @@ import ArticleCard from './ArticleCard';
 import {useSearchParams} from 'react-router-dom'
 import Loading from "../../utils/Loading";
 import Dropdown from "../search/Dropdown";
-import { sortedByField, sortedByNumber } from '../../utils/sortBy';
+import { sortedByDate, sortedByField, sortedByNumber } from '../../utils/sortBy';
 
 
 const Articles = () => {
@@ -50,12 +50,15 @@ const sortedArticles = () => {
       return sortedByNumber(articles, 'comment_count', 'asc');
     case 'CommentCountDesc':
       return sortedByNumber(articles, 'comment_count', 'desc');
+    case 'dateAsc':
+      return sortedByDate(articles, 'created_at', 'asc');
+    case 'dateDesc':
+      return sortedByDate(articles, 'created_at', 'desc');
     default:
       return articles;
   }
 }
-  console.log(articles, '<<<articles from Articles.jsx')
-   console.log(sortMethod, '<<<sort method in Articles.jsx')
+
   return (
     <section >
       <div className='sorting'><Dropdown sortMethod={sortMethod} setSortMethod={setSortMethod}/></div>

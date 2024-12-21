@@ -2,7 +2,7 @@ import React from 'react'
 
 const Dropdown = ( { sortmethod, setSortMethod }) => {
   return (
-    <div>
+    <div className='sorting-dropdown'>
       <label htmlFor="sort">Sort by:</label>
       <select 
       name="sort" 
@@ -16,8 +16,9 @@ const Dropdown = ( { sortmethod, setSortMethod }) => {
         <option value="votesDesc">Votes (High to Low)</option>
         <option value="votesAsc">Votes (Low to High)</option>
         <option value="CommentCountDesc">Comments (High to low )</option>
-        <option value="CommentCountAsc">Comments(Low to High )</option>
-
+        <option value="CommentCountAsc">Comments (Low to High )</option>
+        <option value="dateDesc">Date (Latest Articles)</option>
+        <option value="dateAsc">Date (Oldest Articles)</option>
       </select>
     </div>
   )

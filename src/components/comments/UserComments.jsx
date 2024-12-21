@@ -33,7 +33,7 @@ const UserComments = () => {
 
   return (
     <div className='user-comments-page'>
-    <h2>Hello {currentUser}'s</h2>
+    <h2>Hello {currentUser}</h2>
     <h3>These are your comments</h3>
         {comments.length === 0 ? (<p>No comments found</p>) : 
         (

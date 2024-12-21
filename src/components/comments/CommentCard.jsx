@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ThumbsUp, ThumbsDown, Plus} from 'lucide-react'
 import  {updateCommentVotes}  from '../../api/api';
+import { formatDate } from '../../utils/formatDate';
 
 const CommentCard = ({ comment, currentUser, onDelete }) => {
   const [error, setError] = useState(null)
@@ -9,9 +10,9 @@ const CommentCard = ({ comment, currentUser, onDelete }) => {
   const [hasDownVoted, setHasDownVoted] = useState(false)
 
 
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleString()
-  }
+  // const formatDate = (dateString) => {
+  //   return new Date(dateString).toLocaleString()
+  // }
 
   
   const handleVote = async(inc_votes) => {
