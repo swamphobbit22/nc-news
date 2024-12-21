@@ -39,7 +39,10 @@ const ArticlePage = () => {
   return (
     <section id='article-container'> 
       <article id='article-inner'>
-        <img src={article.article_img_url} alt={article.title} />
+        <figure>
+          <img src={article.article_img_url} alt={article.title} />
+          <figcaption>Article: {article.title}</figcaption>
+        </figure>
         <h2 className='title'>{article.title}</h2>
         <span>By: {article.author}</span>
         <p>Date: {formatDate(article.created_at)}</p>
