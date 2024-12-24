@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { getUser} from '../api/api'
+import { getUserById } from '../api/api'
 
 export const UserContext = createContext();
 
@@ -8,17 +8,21 @@ export const UserProvider = ({ children }) => {
 
     const fetchUser = async (username) => {
         try {
-            console.log('Fetching user with username:', username);
-            const userData = await getUser(username);
+   
+            const userData = await getUserById(username);
+            // const userData = {
+            //     username: 'testuser',
+            //     name: 'Test User',
+            //     avatar_url: 'https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953'
+            // };
             
-            console.log('Fetched user data:', userData);
+            console.log('Fetched user data:>>>>>', userData);
             
             if (userData) {
                 setUser(userData);
             }
         } catch (error) {
             console.error('Error fetching user:', error);
-            // Optionally handle error state
             setUser(null);
         }
     };

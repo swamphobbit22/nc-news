@@ -1,0 +1,30 @@
+#dashboard-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 80vh;
+    height: auto;
+    width: auto;
+    margin: 10px;
+    box-sizing: border-box;
+  }
+
+  aside{
+    border: 2px solid;
+    width: 150px;
+    max-height: min-content;
+    flex-shrink: 0;
+    padding: 15px;
+    background: #f0f0f0 ;
+  }
+  
+  .main-container{
+    display: flex;
+    height:   auto;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  

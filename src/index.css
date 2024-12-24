@@ -20,23 +20,27 @@
 }
 
 #header{
-  background: var(--primary);
+  background: #f0f0f0 ;
   height: 50px;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #footer{
-background: var(--secondary);
+background: #f0f0f0 ;
 height: 40px;
+border-top: 2px solid #3d4756;
 }
 
 #main{
   height: 90vh;
-  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0;
+
 }
 
 #navbar{

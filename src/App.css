@@ -391,13 +391,25 @@ textarea{
   border-radius: 5px;
 }
 
+/* main homepage */
+#main {
+  height: 80vh;
+}
 
-/* .loader-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  width: 100%;
-} */
 
+
+#main h2 {
+  margin-top: 20px;
+  align-content: center;
+}
+
+#main ul {
+  margin-top: 0;
+  padding: 5px 40px;
+}
+
+.user-profile{
+  margin: 20px;
+  border: 2px solid red;
+}
 
