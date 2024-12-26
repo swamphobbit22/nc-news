@@ -47,6 +47,7 @@ const deleteComment = async (comment_id) => {
 
 const getUserById = async (username) => {
     const { data } = await api.get(`/users/${username}`);
+    
     return data.users;
 }
 

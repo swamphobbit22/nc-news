@@ -23,12 +23,12 @@ const Main = () => {
       });
   }, []);
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <section className='main'><Loading /></section> ;
 
   const recentArticles = getMostRecentArticles(articles, 4); // Get top 5 articles
 
   return (
-    <section id='main'>
+    <section className='main'>
       <h2>Most Recent Articles</h2>
       <ul className="articles-list-container">
         {recentArticles.map((article) => (

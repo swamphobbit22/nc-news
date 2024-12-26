@@ -19,7 +19,6 @@ const Articles = () => {
     setIsLoading(true)
     getArticles(topicQuery).then((articlesData) => {
         setArticles(articlesData)
-        console.log(articlesData, '<<<articlesData')
         setIsLoading(false)
     })
     .catch((err) => {
@@ -28,7 +27,7 @@ const Articles = () => {
     })
   }, [topicQuery])
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <section className='main'><Loading /></section>;
 
   //switch statement here??? for article sort
 const sortedArticles = () => {

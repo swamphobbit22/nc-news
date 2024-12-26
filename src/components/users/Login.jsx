@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { UserContext } from "../../context/UserContext";
 
 const Login = () => {
@@ -22,14 +22,12 @@ const Login = () => {
         <section className='login'>
             <h2>Sign in to manage your account</h2>
             <form onSubmit={handleSubmit} className='signin-form'>
-                <label htmlFor="username">Username</label>
-                <br />
                 <input 
                 type="text" 
                 id='username'
                 name='username'
                 value={username}
-                
+                placeholder='Username'
                 onChange={(e) => setUsername(e.target.value)}
                 required
                 />

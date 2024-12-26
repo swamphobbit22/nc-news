@@ -21,8 +21,8 @@ function App() {
   return (
     <>
       <Header />
-        <Navbar />
         <UserProvider>
+        <Navbar />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/articles" element={<Articles />} />

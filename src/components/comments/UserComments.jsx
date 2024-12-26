@@ -6,7 +6,7 @@ import CommentCard from './CommentCard'
 const UserComments = () => {
 
     const { user } = useContext(UserContext)
-    //const currentUser = 'happyamy2016';
+    //const currentUser = 'happyamy2016'; testing only - to be removed
     const [comments, setComments] = useState([]);
     const [error, setError] = useState(null);
 
@@ -17,7 +17,7 @@ const UserComments = () => {
                     setComments(commentsData)
                 })
                 .catch((error) => {
-                    setErroe('Error fetching user comments')
+                    setError('Error fetching user comments')
                     console.error(error)
                 })
             }
