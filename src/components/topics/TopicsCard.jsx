@@ -6,8 +6,8 @@ const TopicsCard = ({ topic }) => {
   //get images dynamicall from unsplash
   const [imageUrl, setImageUrl] = useState(null)
 
-  console.log(topic)
-  const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+  // use import.met.env for vite!!!!!
+  const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY; 
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -51,27 +51,3 @@ const TopicsCard = ({ topic }) => {
 
 export default TopicsCard;
 
-
-//original code
-// import React from 'react'
-// import { Link } from 'react-router-dom'
-
-// const TopicsCard = ({ topic }) => {
-//     return (
-//       <section className='topic-container'>
-//         <div  className='topic-cards'>
-//           <div key={topic.slug}>
-//               <Link className='link' to={`/articles?topic=${topic.slug}`}>
-//                   <h2>{topic.slug}</h2>
-//               </Link>
-//           </div>
-//           <div>
-//             <img src="" alt="" />
-//           </div>
-//         </div>
-
-//       </section>
-//     )
-//   }
-
-// export default TopicsCard;

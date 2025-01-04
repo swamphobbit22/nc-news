@@ -36,8 +36,10 @@
 }
 
 .topics-grid{
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
@@ -48,6 +50,7 @@
   padding: 1rem;
   justify-content: space-between;
   max-width: 100%;
+  height: auto;
 }
 
 .topic-cards{
@@ -455,8 +458,10 @@ textarea{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
   align-items: center;
-  height: 80vh;
+  min-height: 80dvh;
+  height: auto;
   margin: 20px;
 }
 
@@ -505,4 +510,17 @@ textarea{
 
 .login button:hover{
   cursor: pointer;
+}
+
+@media only screen and (max-width:900px) {
+
+  .topics-grid{
+    height: auto;
+    margin: 20px 0;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  .topic-container{
+    flex-direction: column;
+  }
 }
