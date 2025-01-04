@@ -20,14 +20,14 @@ const Topics = () => {
 
   return (
     <section className='main'>
-    <ul className="list-container">
+    <div className='topics-grid'>
         {topics.map((topic) => {
             
             return (
                 <TopicsCard  topic={topic} key={topic.slug}/>
             )
         })}
-    </ul>
+    </div>
     </section>
   )
 }
