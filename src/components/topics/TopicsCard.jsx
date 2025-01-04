@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom'
 
 const TopicsCard = ({ topic }) => {
     return (
-      <div key={topic.slug}>
-          <li>
-              <Link to={`/articles?topic=${topic.slug}`}>
+      <section className='container'>
+      <div className='topic-cards' key={topic.slug}>
+              <Link className='link' to={`/articles?topic=${topic.slug}`}>
                   <h2>{topic.slug}</h2>
               </Link>
-          </li>
+              <div>
+                
+              </div>
       </div>
+      </section>
     )
   }
 
