@@ -58,10 +58,10 @@ const CommentCard = ({ comment, currentUser, onDelete }) => {
     <section  className='comment-cards'>
         <div>
           <li>
-            <p>Date: {formatDate(comment.created_at)}</p>
-            <p>User: {comment.author}</p>
-            <p>{comment.body}</p>
-            <p>Total votes: {votes}</p>
+            <p className='align-date'>Date: {formatDate(comment.created_at)}</p>
+            <p className='align-name'>User: {comment.author}</p>
+            <p className='comment-body'>{comment.body}</p>
+            <p className='total-votes'>Total votes: {votes}</p>
           </li>
           <div className="thumbs-container">
           <button 

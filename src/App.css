@@ -458,11 +458,26 @@ figcaption {
   text-align: center;
 }
 
+.align-date{
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.align-name{
+  text-align: left;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
 .total-votes{
   text-align: left;
   bottom: 1%;
   left: 5%;
-  color: red;
+  font-size: 0.9rem;
+}
+
+.comment-body{
+    text-align: justify;
+    margin-bottom: 15px;
 }
 
 .thumbs-container {
@@ -724,6 +739,7 @@ textarea{
 
     .paragraph{  
       line-height: 1.8;
+      font-size: 0.8em;
     }
 
     .comments{
@@ -731,8 +747,25 @@ textarea{
       font-style: oblique;
     }
 
+    .align-date{
+      font-size: 0.7rem;
+    }
+    
+    .align-name{
+      font-size: 0.7rem;
+    }
+    .total-votes{
+      font-size: 0.8rem;
+    }
+    
+    .comment-body{
+      font-size: 0.8rem;
+      margin-bottom: 15px;
+    }
+
     #footer{
       flex-direction: column;
+      height: auto;
     }
 
   
