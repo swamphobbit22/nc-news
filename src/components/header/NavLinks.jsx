@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { LogIn, LogOut } from 'lucide-react'
 import { UserContext } from '../../context/UserContext'
 
-const Navbar = () => {
-  const { user, logout } = useContext(UserContext); // 
+const NavLinks = () => {
+  const { user, logout } = useContext(UserContext);  
 
   return (
-    <nav id='navbar' className='nav'>
+    <nav className='navlinks'>
       <NavLink to="/" className={({ isActive}) => isActive ? 'active-link' : undefined}>Main</NavLink>
       <NavLink to="/topics" className={({ isActive}) => isActive ? 'active-link' : undefined}>Topics</NavLink>
       <NavLink to="/articles" className={({ isActive}) => isActive ? 'active-link' : undefined}>Articles</NavLink>
@@ -35,4 +35,6 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default NavLinks;
+
+// id='navbar' className='nav'

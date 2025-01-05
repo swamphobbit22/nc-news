@@ -60,7 +60,12 @@ const sortedArticles = () => {
 
   return (
     <section >
-      <div className='sorting'><Dropdown sortMethod={sortMethod} setSortMethod={setSortMethod}/></div>
+      <div className='sorting-container'>
+      <div className='sorting'>
+        <Dropdown sortMethod={sortMethod} setSortMethod={setSortMethod}/>
+        </div>
+      </div>
+      
       <ul className="articles-list-container">
           {sortedArticles().map((article) => {
             return (

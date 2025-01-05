@@ -3,9 +3,11 @@ import React from 'react'
 const Footer = () => {
   return (
     <div id='footer'>
-      <p>© {new Date().getFullYear()} Kirsty Hall. All rights reserved. This website was created as a Northcoders project.</p>
+        <p>© {new Date().getFullYear()} <a href="">Kirsty Hall</a> All rights reserved</p>
+        <p></p>
+        <p>This website was created as a <a href="https://northcoders.com">Northcoders</a> project </p> 
     </div>
   )
 }
 
-export default Footer
+export default Footer;

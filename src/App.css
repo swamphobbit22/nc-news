@@ -2,6 +2,116 @@
   font-family: "Poppins", serif;
 }
 
+/* for responsive navbar */
+.main-header{
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #555;
+}
+
+.main-header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.main-header-inner{
+  flex-shrink: 0;
+}
+
+.main-header .title{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+.main-header .subtitle{
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  font-style: oblique;
+  color: #e1dfdf;
+}
+
+.navlinks{
+  display: none;
+  align-items: center;
+}
+
+.navlinks > * + * {
+  margin-left: 2rem;
+
+}
+
+/* mobile nav classes */
+.menu-btn{
+  padding: 0.5rem;
+  color: #374151;
+}
+
+.btn-open{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0; 
+  background-color: black;
+  opacity: 0;
+  transition: opacity 150ms ease; 
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 0.5; 
+  pointer-events: auto;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 4rem;  /* top-16 = 64px = 4rem */
+  right: 0;
+  width: 16rem;  /* w-64 = 256px = 16rem */
+  height: 100vh;
+  background-color: white;
+  transform: translateX(100%);  /* Initially off-screen */
+  transition: transform 200ms ease-in-out;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-nav {
+  padding: 1rem;  /* p-4 */
+}
+
+.mobile-nav > * + * {
+  margin-top: 1rem;  /* space-y-4 */
+}
+
+/* Navigation links */
+.mobile-nav-link {
+  display: block;
+  padding: 0.5rem; 
+  color: #374151; 
+  border-radius: 0.25rem;  
+}
+
+.mobile-nav-link:hover {
+  background-color: #F3F4F6;  /* hover:bg-gray-100 */
+}
+
+
+
+
+/* old navbar */
 .nav {
   display: flex;
   justify-content: flex-start;
@@ -14,8 +124,17 @@
 }
 
 .active-link{
-  color: rgb(23, 215, 45);
+  color: white;
   font-weight: bold;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.active-link:hover{
+  border: 1px solid rgb(87, 165, 229);
+  color: rgb(87, 165, 229);
 }
 
 /* problem with alignment - width=73% to align it right!! until I have a better solution */
@@ -26,14 +145,19 @@
 }
 
 .logout-icon{
-  color: orange;
-  margin-left: auto;
+  color: white;
+  margin-left: 3rem;
 }
 
 .login-icon{
-  color: darkgreen;
-  margin-left: auto;
+  color: white;
+  margin-left: 3rem;
+
 }
+
+/* .topic-heading{
+border: 2px solid magenta;
+} */
 
 .topics-grid{
   max-width: 100%;
@@ -41,6 +165,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 60px;
 }
 
 .topic-container{
@@ -54,7 +179,7 @@
 }
 
 .topic-cards{
-  flex: 0 1 300px; /* This means: don't grow, allow shrinking, base width 300px */
+  flex: 0 1 300px; /* *****This means: don't grow, allow shrinking, base width 300px */
   display: flex;  
   flex-direction: row;
   align-items: center;
@@ -304,15 +429,6 @@ figcaption {
   transition: transform 0.8s;
 }
 
-/* .comment-cards:hover{
-  transform: translateY(-5px);
-  background-color: rgba(var(--secondary-color-light),0.1); 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
-  inset 0 4px 8px rgba(255, 255, 255, 0.2);
-} */
-
 .user-comments-page{
   display: flex;
   flex-wrap: wrap;
@@ -435,15 +551,23 @@ textarea{
 }
 
 /* for sorting bar and dropdown */
+.sorting-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 80px;
+}
+
 .sorting{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  min-width: 30%;
   height: 40px;
-  margin: 0;
   padding: 0;
-  background: grey;
+  background: rgb(206, 206, 206);
+  border: 1px solid black;
+  border-radius: 50px;
 }
 .sorting-dropdown label{
   margin-right:10px ;
@@ -462,11 +586,11 @@ textarea{
   align-items: center;
   min-height: 80dvh;
   height: auto;
-  margin: 20px;
+  margin: 5%;
 }
 
 .main h2 {
-  margin-top: 20px;
+  margin-top: 60px;
   text-align: center;
 }
 
@@ -523,4 +647,50 @@ textarea{
   .topic-container{
     flex-direction: column;
   }
+}
+
+@media(min-width:1024px){
+  .main-header{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+  @media (min-width: 768px) {
+    .navlinks{
+      display: flex;
+    }
+
+    .hide-menu{
+      display: none;
+    }
+  }
+
+  @media (max-width:768px){
+    .logout-icon{
+      color: darkslategray;
+      margin: auto;
+    }
+    
+    .login-icon{
+      color: darkslategray;
+      margin: 1rem;
+    }
+
+    hr{
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .main{
+      margin-top: 15%;
+    }
+  }
+
+@media(min-width:640px){
+  .main-header{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
 }

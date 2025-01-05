@@ -20,7 +20,9 @@ const Topics = () => {
 
   return (
     <section className='main'>
+      <div><h2 className='topic-heading'>Select a topic below</h2></div>
     <div className='topics-grid'>
+      
         {topics.map((topic) => {
             
             return (

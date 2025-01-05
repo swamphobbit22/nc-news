@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/header/Header';
-import Navbar from './components/nav/Navbar';
+// import Navbar from './components/nav/Navbar';
 import Footer from './components/footer/Footer';
 import Main from './components/main/Main'
 import Articles from './components/articles/Articles'
@@ -20,9 +20,10 @@ function App() {
 
   return (
     <>
-      <Header />
+      
         <UserProvider>
-        <Navbar />
+          <Header />
+        {/* <Navbar /> */}
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/articles" element={<Articles />} />
