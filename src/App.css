@@ -97,11 +97,11 @@
 }
 
 .mobile-nav {
-  padding: 1rem;  /* p-4 */
+  padding: 1rem;  
 }
 
 .mobile-nav > * + * {
-  margin-top: 1rem;  /* space-y-4 */
+  margin-top: 1rem;  
 }
 
 /* Navigation links */
@@ -113,17 +113,16 @@
 }
 
 .mobile-nav-link:hover {
-  background-color: #F3F4F6;  /* hover:bg-gray-100 */
+  background-color: #F3F4F6;  
 }
 
-
-
-
-/* old navbar */
+.align-user{
+  text-align: left;
+  margin-bottom: 15px;
+}
 .nav {
   display: flex;
   justify-content: flex-start;
-  /* justify-content:left;*/
   align-items: center;
   gap: 10px;
   padding: 1rem;
@@ -161,7 +160,6 @@
 .login-icon{
   color: white;
   margin-left: 3rem;
-
 }
 
 .topics-grid{
@@ -618,7 +616,8 @@ textarea{
 }
 
 .main h2 {
-  margin-top: 60px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -635,12 +634,13 @@ textarea{
 .login{
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  align-items: center;
+  height: 100dvh;
   max-width: 100%;
   max-height: auto;
   gap: 20px;
   align-items: center;
-  margin: 30px;
+  margin-top: 10%;
 }
 
 .login h2{
@@ -780,7 +780,10 @@ textarea{
         padding: 10px;
       }
    
-    
+    .login{
+      margin-top: 2%;
+      text-align: center;
+    }
   }
 
 @media(min-width:640px){

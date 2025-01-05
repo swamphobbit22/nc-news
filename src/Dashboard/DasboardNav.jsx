@@ -14,7 +14,7 @@ const DashboardNav = () => {
 
     return (
             
-                <nav>
+                <nav className='mobile-aside'>
                 {navItems.map((item, index) => (
                     <Link 
                     key={index} 
@@ -24,7 +24,7 @@ const DashboardNav = () => {
                         alignItems: 'center',
                         textDecoration: 'none',
                         color: '#000',
-                        padding: '0.5rem 0',
+                        padding: '0.3rem 0',
                     }}
                     >
                         {item.icon && <item.icon style={{ marginRight: '0.5rem' }} />}

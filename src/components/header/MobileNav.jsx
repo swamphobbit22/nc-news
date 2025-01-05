@@ -58,7 +58,7 @@ const MobileNav = ({ isOpen, setIsOpen }) => {
 
           { user ? (
                   <>
-                  <span>{user.username} is logged in</span>
+                  <p className='align-user'>{user.username} is logged in</p>
                 <NavLink 
                     to='/' 
                     onClick={logout} 
@@ -70,7 +70,7 @@ const MobileNav = ({ isOpen, setIsOpen }) => {
                 ) : ( 
                 <NavLink 
                 to="/login" 
-                className={({ isActive}) => `${isActive ? 'active-link' : undefined} login-icon`}
+                className='login-icon'
                 >
                   <LogIn />
                 </NavLink>
