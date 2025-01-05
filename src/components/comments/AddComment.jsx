@@ -39,7 +39,7 @@ const AddComment = ({ article_id }) => {
   return (
 
       <div className='add-comment-container'>
-        {/* <h4>Add a comment</h4> */}
+
         <form onSubmit={handleSubmit} className='add-comment'>
             <div>
                 <textarea 

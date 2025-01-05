@@ -14,12 +14,10 @@ const Dashboard = () => {
   }, [username, fetchUser]);
 
   return (
-    <div id="dashboard-container" >
-
-      <main style={{ flexGrow: 1, padding: '1rem'}}>
-        <span><h2>Hello {user ? user.username : 'Guest'},<p/> Welcome to your user dashboard!</h2></span><br />
+    <div >
+      <main className='user-home'>
+        <span><h2>Hello <i>{user ? user.username : 'Guest'},</i> <p/> Welcome to your user dashboard!</h2></span><br />
         <span>Soon you will be abe to view your submitted articles and your comments, view your profile details and manage your account</span>
-        {/* render profile details here. */}
       </main>
     </div>
   );

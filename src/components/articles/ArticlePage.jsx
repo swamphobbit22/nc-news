@@ -44,10 +44,10 @@ const ArticlePage = () => {
           <figcaption>Article: {article.title}</figcaption>
         </figure>
         <h2 className='title'>{article.title}</h2>
-        <span>By: {article.author}</span>
-        <p>Date: {formatDate(article.created_at)}</p>
+        <p className='centered'>By: {article.author}</p>
+        <p className='centered date'>Date: {formatDate(article.created_at)}</p>
         <p className='paragraph'>{article.body}</p>
-        <span className='comments'>Comments on this article: {article.comment_count}</span>
+        <p className='comments'>Comments on this article: {article.comment_count}</p>
       </article>
 
       <div id='comments'> 

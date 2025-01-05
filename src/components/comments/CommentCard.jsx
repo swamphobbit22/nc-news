@@ -8,13 +8,7 @@ const CommentCard = ({ comment, currentUser, onDelete }) => {
   const [votes, setVotes] = useState(comment.votes);
   const [hasUpVoted, setHasUpVoted] = useState(false)
   const [hasDownVoted, setHasDownVoted] = useState(false)
-
-
-  // const formatDate = (dateString) => {
-  //   return new Date(dateString).toLocaleString()
-  // }
-
-  
+ 
   const handleVote = async(inc_votes) => {
 
     if((inc_votes === 1 && hasUpVoted) || (inc_votes === -1 && hasDownVoted)) {

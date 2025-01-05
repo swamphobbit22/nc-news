@@ -29,7 +29,6 @@ const Articles = () => {
 
   if (isLoading) return <section className='main'><Loading /></section>;
 
-  //switch statement here??? for article sort
 const sortedArticles = () => {
 
   if(sortMethod === 'none'){

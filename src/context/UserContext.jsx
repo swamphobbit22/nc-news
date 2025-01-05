@@ -12,14 +12,7 @@ export const UserProvider = ({ children }) => {
         try {
    
             const userData = await getUserById(username);
-            // const userData = {
-            //     username: 'testuser',
-            //     name: 'Test User',
-            //     avatar_url: 'https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953'
-            // };
-            
-            console.log('Fetched user data:>>>>>', userData);
-            
+                      
             if (userData) {
                 setUser(userData);
             }
@@ -34,3 +27,10 @@ export const UserProvider = ({ children }) => {
         </UserContext.Provider>
     );
 };
+
+
+            // const userData = {
+            //     username: 'testuser',
+            //     name: 'Test User',
+            //     avatar_url: 'https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953'
+            // };
