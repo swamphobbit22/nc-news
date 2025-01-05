@@ -640,7 +640,7 @@ textarea{
   max-height: auto;
   gap: 20px;
   align-items: center;
-  margin-top: 25%;
+  margin-top: 20%;
 }
 
 .login h2{
@@ -781,7 +781,7 @@ textarea{
       }
    
     .login{
-      margin-top: 2%;
+      margin-top: 25%;
       text-align: center;
     }
   }

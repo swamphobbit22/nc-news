@@ -82,8 +82,7 @@ Key dependencies include:
 - [Vite](https://vitejs.dev/): Development and build tool.
 
 ## Contributing
-
-This project is a student portfolio piece and is not currently open to external contributions.
+This project is a student portfolio piece and is not currently open to external contributions, therefore I will not accept any pull requests.
 However, feel free to 
 1. Fork the repository.
 2. Clone your own version
@@ -92,7 +91,6 @@ However, feel free to
 This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
 
 ## Licence
-
 This project is licensed under the [MIT Licence](LICENSE).
 
 
