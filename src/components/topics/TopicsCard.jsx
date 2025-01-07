@@ -6,7 +6,7 @@ const TopicsCard = ({ topic }) => {
   //get images dynamicall from unsplash
   const [imageUrl, setImageUrl] = useState(null)
 
-  // use import.met.env for vite!!!!!
+  // use import.met.env for vite!!!!
   const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY; 
 
   useEffect(() => {
