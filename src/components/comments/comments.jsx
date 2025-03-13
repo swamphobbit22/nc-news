@@ -9,7 +9,7 @@ const Comments = () => {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-      console.log('article id in comments.jsx', article_id)
+      // console.log('article id in comments.jsx', article_id)
       
     useEffect(() => {
         const fetchComments = async () => {

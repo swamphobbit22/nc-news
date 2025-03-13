@@ -5,7 +5,6 @@ import {useSearchParams} from 'react-router-dom'
 import Loading from "../../utils/Loading";
 import Dropdown from "../search/Dropdown";
 import { sortedByDate, sortedByField, sortedByNumber } from '../../utils/sortBy';
-import { UserContext } from '../../context/UserContext'
 
 
 const Articles = () => {
