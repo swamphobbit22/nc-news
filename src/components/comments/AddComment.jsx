@@ -1,18 +1,31 @@
-import React, { useState} from 'react'
-import { addComment } from '../../api/api'
+import React, { useState, useContext} from 'react'
+import { useParams } from 'react-router'
+import { UserContext } from '../../context/UserContext'
+import { addComment, getCommentsByArticleId } from '../../api/api'
 
-const AddComment = ({ article_id }) => {
+const AddComment = () => {
+    const { article_id, setComments } = useParams();
+    const { user } = useContext(UserContext);
+
     const [error, setError] = useState(null)
-    const [formData, setFormData] = useState({author: 'happyamy2016'})
+    const [formData, setFormData] = useState({author: user?.username || null})
+   
+      console.log('form data',formData)
+      console.log('article id:', article_id)
 
-  // Handle form input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+
+    if (!user) {
+      return <p style={{ color: "red" }}>You must be logged in to add a comment.</p>;
+    }
+
+    // Handle form input changes
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,13 +36,18 @@ const AddComment = ({ article_id }) => {
       }
 
     const payload = {
-        username: formData.author, //backend expects username and body!!
+        username: user.username, //formData.author, //backend expects username and body!!
         body: formData.body
       };
 
     try {
-        const response = await addComment(Number(article_id), payload);
+        await addComment(Number(article_id), payload);
         alert("Comment added successfully!");
+
+        //refetch the comments and update state
+        // const updatedComments = await getCommentsByArticleId(article_id);
+        // setComments(updatedComments)//update parent component
+        // console.log('setComments in AddComment', setComments)
         setFormData({ ...formData, body: ""}) //clear it out after submission
     } catch (err) {
         setError(err.response?.data?.msg || "Something went wrong!");

@@ -27,6 +27,8 @@ const updateCommentVotes = async (comment_id) => {
 
 const addComment = async (article_id, commentData) => {
         const { data } = await api.post(`/articles/${article_id}/comments`, commentData);
+        console.log('data in api',data)
+        console.log('comment data in api', commentData)
         return data;
 }
 

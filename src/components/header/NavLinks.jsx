@@ -5,6 +5,7 @@ import { UserContext } from '../../context/UserContext'
 
 const NavLinks = () => {
   const { user, logout } = useContext(UserContext);  
+  // console.log('NavLinks rendered');
 
   return (
     <nav className='navlinks'>
@@ -16,6 +17,7 @@ const NavLinks = () => {
         <p>{user.username} is logged in</p>
       <NavLink 
           to='/' 
+          data-testid="logout-icon"
           onClick={logout} 
           className='logout-icon'
         >
@@ -32,6 +34,8 @@ const NavLinks = () => {
       )}
       </nav>
   )
+
+  
 }
 
 export default NavLinks;

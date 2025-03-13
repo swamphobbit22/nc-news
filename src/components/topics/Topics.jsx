@@ -5,7 +5,7 @@ import Loading from "../../utils/Loading";
 
 
 const Topics = () => {
-    const [topics, setTopics]= useState([]);
+      const [topics, setTopics]= useState([]);
       const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
